@@ -6,22 +6,25 @@ public:
         int flagc=1;
         int flagd=0;
         for(int i=0;i<s.size();i++){
+            printf("%d",flagc);
          if(s[i]=='A'){
-            if(flagl<3 && flagd==1 ){
-  printf("%d",flagl);
+            if(flagl<3 && flagd==1 ){ 
             flagc=0;
-            }
-            
+            flagl=0;
+            } 
             flaga++;
          }else if(s[i]=='L'){
+            printf("%c",s[i]);
            if(flagc=1){
                flagl++;
                flagc=1;
                flagd=1;
-    
-           }
-         
-           
+           } 
+         }else{
+            if(flagl<3 && flagd==1 ){ 
+            flagc=0;
+            flagl=0;
+            }
          }
         
         }
