@@ -19,29 +19,36 @@ public:
           }
           if(s[i]==')'){
             printf("%c", Parentheses[0]);
-            if( Parentheses[j]=='('){
+            if(j>0){
+            if( Parentheses[j-1]=='('){
                 j--;
                 flag_1st--;
             }else{
                 return false;
+            }}else{
+                return false;;
             }
           }else if(s[i]=='}'){
-          if( Parentheses[j]=='{'){
+            if(j>0){
+          if( Parentheses[j-1]=='{'){
                 j--;
                 flag_2nd--;
             }else{
                 return false;
+            }}else{
+                return false;;
             }
           }else if(s[i]==']'){
-            
-            if( Parentheses[j]=='['){
+            if(j>0){
+            if( Parentheses[j-1]=='['){
                 j--;
                 flag_3rd--;
             }else{
                 return false;
+            }}else{
+                return false;;
             }
           }
-
         }
         if(flag_1st>=1 || flag_2nd>=1 || flag_3rd>=1){
             return false;
